@@ -1,5 +1,7 @@
 # STRATINT
 
+**Contact:** jtdavis0492@gmail.com
+
 An AI-powered Open Source Intelligence (OSINT) platform that continuously monitors RSS feeds, enriches data with AI analysis, and provides a real-time intelligence feed with event correlation and deduplication.
 
 ## Features
