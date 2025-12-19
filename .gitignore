@@ -1,0 +1,56 @@
+# Binaries
+bin/
+/server
+/main
+cloud-sql-proxy
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build cache
+*.test
+*.out
+coverage.out
+
+# Frontend build
+web/dist/
+web/node_modules/
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Test reports (output files, not source)
+/test-reports/
+test/test_report.*
+
+# Environment files (keep .env.example as template)
+.env
+.env.*
+!.env.example
+
+# Backup files
+*.bak
+*.backup
+*~
+*.swp
+*.swo
+
+# Database dumps
+*.sql.bak
+*.sql.dump
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Credentials (never commit)
+*.credentials
+*.pem
+*.key
+service-account*.json

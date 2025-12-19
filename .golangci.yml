@@ -1,0 +1,35 @@
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters:
+  disable:
+    - errcheck  # TODO: Fix unchecked errors incrementally
+  enable:
+    - gofmt
+    - govet
+    - staticcheck
+    - unused
+    - gosimple
+    - ineffassign
+
+issues:
+  exclude-rules:
+    # Ignore unchecked errors in test files
+    - path: _test\.go
+      linters:
+        - errcheck
+    # Ignore unused functions for now
+    - linters:
+        - unused
+      text: "is unused"
+    # Ignore some staticcheck warnings
+    - linters:
+        - staticcheck
+      text: "SA4010"
+    - linters:
+        - gosimple
+      text: "S1007|S1017|S1039"
+    - linters:
+        - ineffassign
+      text: "ineffectual assignment"

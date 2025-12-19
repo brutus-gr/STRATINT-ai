@@ -1,0 +1,46 @@
+# Lightweight API-only Dockerfile (no frontend, no Playwright)
+# For api.stratint.com subdomain
+
+# Build stage
+FROM golang:1.24-alpine AS builder
+
+RUN apk add --no-cache git
+
+WORKDIR /app
+
+# Copy go module files
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy backend source
+COPY . .
+
+# Build backend binary
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o api-server ./cmd/server
+
+# Runtime stage
+FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates tzdata
+
+WORKDIR /app
+
+# Copy binary from builder
+COPY --from=builder /app/api-server ./server
+
+# Copy migrations
+COPY migrations ./migrations
+
+# Run as non-root user
+RUN addgroup -g 1000 stratint && \
+    adduser -D -u 1000 -G stratint stratint && \
+    chown -R stratint:stratint /app
+
+USER stratint
+
+# Expose port
+ENV PORT=8080
+EXPOSE 8080
+
+# Start server
+CMD ["./server"]

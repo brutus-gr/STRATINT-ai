@@ -1,0 +1,54 @@
+# Git
+.git
+.gitignore
+
+# Claude Code
+.claude
+
+# Development files
+.env
+.env.*
+*.log
+server.log
+
+# Build artifacts
+server
+web/dist
+web/node_modules
+web/.vite
+
+# Documentation
+*.md
+!README.md
+docs/
+archive/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Test files
+*_test.go
+test/
+coverage.out
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Deployment scripts
+deploy.sh
+deploy-quick.sh
+setup-secrets.sh
+setup-db.sh
+setup-db-simple.sh
+wait-for-db.sh
+cloud-sql-proxy
+*.sh

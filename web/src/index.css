@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global resets and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: dark;
+  color: #e0e0e0;
+  background-color: #0a0a0a;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom scrollbar - brutalist style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border: 1px solid #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Selection color */
+::selection {
+  background: #00ff41;
+  color: #0a0a0a;
+}
+
+::-moz-selection {
+  background: #00ff41;
+  color: #0a0a0a;
+}
+
+/* Terminal cursor effect */
+.cursor-blink::after {
+  content: '▊';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ASCII box drawing characters - ensure proper rendering */
+.ascii-box {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* Glitch text effect */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff0844;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 #00ff41;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(61px, 9999px, 138px, 0); }
+  20% { clip: rect(129px, 9999px, 36px, 0); }
+  40% { clip: rect(112px, 9999px, 3px, 0); }
+  60% { clip: rect(85px, 9999px, 115px, 0); }
+  80% { clip: rect(54px, 9999px, 85px, 0); }
+  100% { clip: rect(93px, 9999px, 61px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(129px, 9999px, 36px, 0); }
+  20% { clip: rect(85px, 9999px, 115px, 0); }
+  40% { clip: rect(54px, 9999px, 85px, 0); }
+  60% { clip: rect(93px, 9999px, 61px, 0); }
+  80% { clip: rect(61px, 9999px, 138px, 0); }
+  100% { clip: rect(112px, 9999px, 3px, 0); }
+}
+
+/* Scan line effect */
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 255, 65, 0.1), transparent);
+  animation: scan 5s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid #00ff41;
+  outline-offset: 2px;
+}
+
+/* Custom Range Slider Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #2a2a2a;
+  border: 2px solid #4a4a4a;
+  cursor: pointer;
+  width: 100%;
+  height: 8px;
+  outline: none;
+}
+
+/* Track styling - WebKit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-track {
+  width: 100%;
+  height: 8px;
+  background: #2a2a2a;
+  border: 2px solid #4a4a4a;
+  box-sizing: border-box;
+}
+
+/* Track styling - Firefox */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: #2a2a2a;
+  border: 2px solid #4a4a4a;
+  box-sizing: border-box;
+}
+
+/* Thumb styling - WebKit */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00ff41;
+  border: none;
+  cursor: grab;
+  transition: all 0.2s;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+  margin-top: -4px;
+}
+
+/* Thumb styling - Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00ff41;
+  border: none;
+  cursor: grab;
+  transition: all 0.2s;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+  border-radius: 0;
+}
+
+/* Hover states */
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #f5f5f5;
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #f5f5f5;
+  transform: scale(1.1);
+}
+
+/* Active/dragging states */
+input[type="range"]:active::-webkit-slider-thumb {
+  cursor: grabbing;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.8);
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  cursor: grabbing;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.8);
+}
+
+/* Links */
+a {
+  color: #0066ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #00ff41;
+}
+
+/* Buttons */
+button {
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Remove transitions for animations */
+.animate-glitch,
+.animate-pulse-slow {
+  transition: none !important;
+}
