@@ -24,6 +24,23 @@ An AI-powered Open Source Intelligence (OSINT) platform that continuously monito
 - Comprehensive filtering (magnitude, confidence, category, time range)
 - Responsive design with custom scrollbars
 
+## Screenshots
+
+### Signal Stream
+Real-time intelligence feed with event categorization, confidence scoring, and entity extraction.
+
+![Signal Stream](docs/images/signal-stream.png)
+
+### AI-Powered Forecasts
+Probabilistic predictions with OHLC-style visualization showing prediction confidence over time.
+
+![Forecasts](docs/images/forecasts.png)
+
+### Portfolio Strategies
+AI-generated portfolio allocations based on emerging signals and market forecasts.
+
+![Strategies](docs/images/strategies.png)
+
 ## Architecture
 
 ```
@@ -365,10 +382,33 @@ Quick start:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License
+
+Copyright (c) 2025 Jacob Tyler Davis (jtdavis0492@gmail.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+See the [LICENSE](LICENSE) file for details.
 
 ## Contact & Support
 
+- **Author**: Jacob Tyler Davis (jtdavis0492@gmail.com)
 - **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/brutus-gr/STRATINT-ai/issues)
 - **Discussions**: Join community discussions on [GitHub Discussions](https://github.com/brutus-gr/STRATINT-ai/discussions)
 - **Documentation**: Full docs available in the [docs/](docs/) directory
